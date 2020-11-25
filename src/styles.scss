@@ -1,1 +1,93 @@
-/* You can add global styles to this file, and also import other style files */
+$twitter-color: rgba(29,161,242,1.00);
+
+@mixin focus {
+  &:focus {
+    outline: 1px dashed $twitter-color;
+  }
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Roboto";
+
+  src: local("Roboto"), local("Roboto-Regular"),
+  url("assets/fonts/roboto-v20-cyrillic_latin-regular.woff2") format("woff2"),
+  url("assets/fonts/roboto-v20-cyrillic_latin-regular.woff") format("woff"),
+  url("assets/fonts/roboto-v20-cyrillic_latin-regular.ttf") format("truetype")
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  min-width: 900px;
+  min-height: 100vh;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  margin: 0;
+
+  font-weight: 400;
+  font-size: 12px;
+  font-family: "Roboto", "Arial", sans-serif;
+  color: black;
+}
+
+.main-header {
+  width: 900px;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 50px;
+
+  svg {
+    fill: $twitter-color;
+  }
+}
+
+.search-input {
+  input {
+    width: 400px;
+    height: 47px;
+
+    padding: 0 20px;
+    font-size: 20px;
+
+    border: 2px solid $twitter-color;
+    border-radius: 30px;
+
+    outline: none;
+
+    @include focus;
+  }
+}
+
+.search-button {
+  width: 200px;
+  height: 47px;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  color: white;
+  background-color: #1da1f2;
+
+  border: 0 solid;
+  border-radius: 30px;
+
+  @include focus;
+}
+
