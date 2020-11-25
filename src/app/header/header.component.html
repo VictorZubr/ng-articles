@@ -7,5 +7,5 @@
     <input type="text" [(ngModel)]="context">
   </div>
 
-  <button class="search-button" (click)="onSearchClick()">Search</button>
+  <a class="search-button"[routerLink]="['/search', context]">Search</a>
 </header>

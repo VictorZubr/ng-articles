@@ -79,6 +79,8 @@ body {
   width: 200px;
   height: 47px;
 
+  padding-top: 13px;
+
   font-size: 15px;
   font-weight: 700;
 
@@ -87,6 +89,9 @@ body {
 
   border: 0 solid;
   border-radius: 30px;
+
+  text-align: center;
+  text-decoration: none;
 
   @include focus;
 }

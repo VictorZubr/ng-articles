@@ -6,16 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styles: [
   ]
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   public context = '';
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
-
-  onSearchClick() {
-    console.log('onSearchClick', this.context);
-
-  }
 }
