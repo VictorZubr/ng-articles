@@ -1,8 +1,9 @@
-$twitter-color: rgba(29,161,242,1.00);
+$content-with: 900px;
+$main-color: #052962;
 
 @mixin focus {
   &:focus {
-    outline: 1px dashed $twitter-color;
+    outline: 1px dashed $main-color;
   }
 }
 
@@ -27,7 +28,7 @@ $twitter-color: rgba(29,161,242,1.00);
 html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  min-width: 900px;
+  min-width: $content-with;
   min-height: 100vh;
 }
 
@@ -43,7 +44,7 @@ body {
 }
 
 .main-header {
-  width: 900px;
+  width: $content-with;
   margin: 20px auto;
   display: flex;
   align-items: center;
@@ -51,10 +52,10 @@ body {
 }
 
 .logo {
-  width: 50px;
+  width: 150px;
 
   svg {
-    fill: $twitter-color;
+    fill: $main-color;
   }
 }
 
@@ -66,7 +67,7 @@ body {
     padding: 0 20px;
     font-size: 20px;
 
-    border: 2px solid $twitter-color;
+    border: 2px solid $main-color;
     border-radius: 30px;
 
     outline: none;
@@ -85,7 +86,7 @@ body {
   font-weight: 700;
 
   color: white;
-  background-color: #1da1f2;
+  background-color: $main-color;
 
   border: 0 solid;
   border-radius: 30px;
@@ -96,3 +97,37 @@ body {
   @include focus;
 }
 
+.search-results {
+  width: $content-with;
+  margin: 0 auto;
+
+  .article {
+    margin-bottom: 20px;
+    padding: 10px 20px 25px;
+    border: 2px solid $main-color;
+
+    a {
+      text-decoration: none;
+      color: #AB0613;
+    }
+
+    .article-date {
+      color: black;
+      font-size: 20px;
+      font-weight: 700;
+    }
+  }
+
+}
+
+.alert-danger {
+  width: $content-with;
+
+  margin: 0 auto;
+  padding: 20px;
+
+  font-size: 15px;
+  color: red;
+
+  border: 2px solid red;
+}

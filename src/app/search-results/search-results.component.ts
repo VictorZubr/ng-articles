@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Params} from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
+
+import { Article } from '../interfaces';
+import { ArticlesService } from '../articles.service';
 
 @Component({
   selector: 'app-search-results',
@@ -8,15 +11,20 @@ import {ActivatedRoute, Params} from '@angular/router';
   ]
 })
 export class SearchResultsComponent implements OnInit {
+  public articles: Article[] = [];
 
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public articlesService: ArticlesService
   ) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
       const context = params.context;
-      console.log(context);
+
+      this.articlesService.getArticles(context).subscribe(({response}) => {
+        this.articles = response.results;
+      });
     });
   }
 

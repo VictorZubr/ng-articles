@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import {SearchResultsComponent} from './search-results/search-results.component';
-import {NotFoundComponent} from './not-found/not-found.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
+import { HeaderComponent } from './header/header.component';
 
 const routes: Routes = [
+  { path: '', component: HeaderComponent},
   { path: 'search/:context', component: SearchResultsComponent},
-  { path: '', component: NotFoundComponent},
   { path: '**', redirectTo: '/', pathMatch: 'full' },
 ];
 
