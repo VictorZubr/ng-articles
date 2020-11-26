@@ -12,6 +12,10 @@
   {{ error }}
 </div>
 
+<div class="progress-wrapper">
+  <div class="progress" [ngStyle]="{'width': articlesService.progress$ | async}"></div>
+</div>
+
 <main class="search-results">
   <article class="article" *ngFor="let article of articles">
 

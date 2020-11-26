@@ -131,3 +131,15 @@ body {
 
   border: 2px solid red;
 }
+
+.progress-wrapper {
+  width: $content-with;
+  height: 5px;
+  margin: 0 auto;
+
+  .progress {
+    width: 0;
+    height: 100%;
+    background-color: lightgreen;
+  }
+}
