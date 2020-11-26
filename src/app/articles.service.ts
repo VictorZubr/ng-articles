@@ -24,7 +24,7 @@ export class ArticlesService {
     // Fake progress
     // progress$ is needed to demonstrate progress because the request is very fast
     const progress$ = interval(100).pipe(
-      take(total),
+      take(total + 1),
       map(num => num / total * 100),
       tap(percent => this.progress$.next(`${percent}%`))
     );
