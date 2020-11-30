@@ -1,6 +1,9 @@
 # NgArticles
 
-Light SPA can search articles used open API
+[ng-articles](https://ng-articles.web.app/)
+
+Light SPA can search articles used open API.
+Displays articles containing a search string.
 
 
 ## Development server
