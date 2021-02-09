@@ -23,7 +23,7 @@ export class ArticlesService {
 
     // Fake progress
     // progress$ is needed to demonstrate progress because the request is very fast
-    const progress$ = interval(100).pipe(
+    const progress$ = interval(20).pipe(
       take(total + 1),
       map(num => num / total * 100),
       tap(percent => this.progress$.next(`${percent}%`))
@@ -37,8 +37,7 @@ export class ArticlesService {
 
     return concat(progress$, request)
       .pipe(
-        takeLast(1),
-        tap(() => this.progress$.next('0'))
+        takeLast(1), // return only request after progress finished
       );
   }
 

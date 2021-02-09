@@ -1,0 +1,7 @@
+<div class="paginator">
+  <div>{{start}} - {{end}} of {{count}}</div>
+  <button class="pagination-button" [disabled]="start === 1" (click)="first()">First</button>
+  <button class="pagination-button" [disabled]="start === 1" (click)="prev()">Prev</button>
+  <button class="pagination-button" [disabled]="end === count" (click)="next()">Next</button>
+  <button class="pagination-button" [disabled]="end === count" (click)="last()">Last</button>
+</div>

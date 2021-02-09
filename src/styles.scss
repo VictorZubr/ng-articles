@@ -3,7 +3,7 @@ $main-color: #052962;
 
 @mixin focus {
   &:focus {
-    outline: 1px dashed $main-color;
+    outline: $main-color dashed 1px;
   }
 }
 
@@ -49,6 +49,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  a {
+    @include focus;
+  }
 }
 
 .logo {
@@ -57,6 +61,8 @@ body {
   svg {
     fill: $main-color;
   }
+
+  @include focus;
 }
 
 .search-input {
@@ -101,19 +107,31 @@ body {
   width: $content-with;
   margin: 0 auto;
 
+  h1 {
+    font-size: 1.2em;
+    margin: 0.5em 0;
+  }
+
   .article {
     margin-bottom: 20px;
-    padding: 10px 20px 25px;
+    padding: 5px 20px 10px;
     border: 2px solid $main-color;
 
     a {
       text-decoration: none;
       color: #AB0613;
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &:focus-within {
+      outline: $main-color dashed 1px  ;
     }
 
     .article-date {
       color: black;
-      font-size: 20px;
+      font-size: 14px;
       font-weight: 700;
     }
   }
@@ -141,5 +159,35 @@ body {
     width: 0;
     height: 100%;
     background-color: lightgreen;
+  }
+}
+
+.paginator {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+
+  color: $main-color;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.pagination-button {
+  margin-left: 5px;
+  padding: 5px 10px;
+
+  color: white;
+  background-color: $main-color;
+
+  border: 0 solid;
+  border-radius: 30px;
+
+  cursor: pointer;
+
+  @include focus;
+
+  &:disabled {
+    opacity: 0.3;
   }
 }

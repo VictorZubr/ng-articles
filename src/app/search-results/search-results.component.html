@@ -12,18 +12,28 @@
   {{ error }}
 </div>
 
-<div class="progress-wrapper">
+<div class="progress-wrapper" *ngIf="status === 'progress'">
   <div class="progress" [ngStyle]="{'width': articlesService.progress$ | async}"></div>
 </div>
 
 <main class="search-results">
-  <article class="article" *ngFor="let article of articles">
 
-    <a [href]="article.webUrl" target="_blank">
-      <h1>{{article.webTitle}}</h1>
-      <div class="article-date">{{article.webPublicationDate | date : 'fullDate'}}</div>
-    </a>
+  <div *ngIf="status === 'results'">
+    <article class="article" *ngFor="let article of articles | slice: startIndex: endIndex">
+      <a [href]="article.webUrl" target="_blank">
+        <h1>{{article.webTitle}}</h1>
+        <div class="article-date">{{article.webPublicationDate | date : 'fullDate'}}</div>
+      </a>
+    </article>
+    <app-paginator [count]="articles.length" (pageChanged)="onPageChanged($event)"></app-paginator>
+  </div>
 
-  </article>
+  <div *ngIf="status === 'no_results'">
+    <article class="article">
+      <a routerLink="/">
+        <h1>No results</h1>
+      </a>
+    </article>
+  </div>
+
 </main>
-
