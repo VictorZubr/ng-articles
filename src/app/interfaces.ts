@@ -3,6 +3,8 @@ export interface Article {
   webPublicationDate: string;
   webTitle: string;
   webUrl: string;
+  pillarName: string;
+  sectionName: string;
 }
 
 export interface ArticleResponse {

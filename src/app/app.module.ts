@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { PaginatorComponent } from './paginator/paginator.component';
+import { FiltersComponent } from './filters/filters.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { PaginatorComponent } from './paginator/paginator.component';
     HeaderComponent,
     SearchResultsComponent,
     PaginatorComponent,
+    FiltersComponent,
   ],
   imports: [
     BrowserModule,

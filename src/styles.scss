@@ -104,22 +104,40 @@ body {
 }
 
 .search-results {
+  display: flex;
   width: $content-with;
   margin: 0 auto;
 
-  h1 {
-    font-size: 1.2em;
-    margin: 0.5em 0;
+  .search-result-filters {
+    width: 20%;
+    margin-right: 10px;
+    padding: 0 10px;
+    border: 2px solid $main-color;
+
+    color: $main-color;
+  }
+
+  .search-result-filters-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    font-size: 1.5em;
+    font-weight: 700;
+  }
+
+  .search-result-articles {
+    width: 80%;
   }
 
   .article {
+    display: flex;
     margin-bottom: 20px;
-    padding: 5px 20px 10px;
+    padding: 5px 10px;
     border: 2px solid $main-color;
 
     a {
       text-decoration: none;
-      color: #AB0613;
       &:focus {
         outline: none;
       }
@@ -129,13 +147,55 @@ body {
       outline: $main-color dashed 1px  ;
     }
 
-    .article-date {
+    .article-main {
+      width: 80%;
+    }
+
+    h1 {
+      font-size: 1.5em;
+      margin: 0.3em 0;
+    }
+
+    .article-tags {
+      width: 20%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+
+    .article-tag {
+      width: fit-content;
+      padding: 3px 10px;
+      background-color: lightblue;
+      border-radius: 10px;
+
+      &:last-child {
+        margin-top: 5px;
+      }
+
+      &.pillar {
+        background-color: lightblue;
+      }
+
+      &.section {
+        background-color: moccasin;
+      }
+    }
+
+    .article-footer {
+      display: flex;
+      justify-content: space-between;
       color: black;
-      font-size: 14px;
+      font-size: 11px;
       font-weight: 700;
     }
   }
 
+}
+
+.no-results {
+  margin: 0 auto;
 }
 
 .alert-danger {
@@ -173,12 +233,14 @@ body {
   font-weight: 700;
 }
 
-.pagination-button {
-  margin-left: 5px;
+.button {
   padding: 5px 10px;
 
   color: white;
   background-color: $main-color;
+
+  font-size: 12px;
+  font-weight: 700;
 
   border: 0 solid;
   border-radius: 30px;
@@ -189,5 +251,10 @@ body {
 
   &:disabled {
     opacity: 0.3;
+    cursor: auto;
   }
+}
+
+.pagination-button {
+  margin-left: 5px;
 }
